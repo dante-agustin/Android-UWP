@@ -19,15 +19,10 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// Package.appxmanifest -> View Designer -> Capabilities -> WebCam y Pictures Library
 
 namespace CapturePhotoUWP
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-  
-    
 
     public sealed partial class MainPage : Page
     {
@@ -40,6 +35,7 @@ namespace CapturePhotoUWP
             
         }
 
+        //Abre la cam para tomar foto y la muestra en un Image
         private async void captureBtn_Click(object sender, RoutedEventArgs e)
         {
             CameraCaptureUI capture = new CameraCaptureUI();
@@ -57,7 +53,7 @@ namespace CapturePhotoUWP
             }
         }
 
-        //Next goto savebutton clickevent and writethe followingcode tosave thecaptured image.
+        //Next goto savebutton clickevent and writethe followingcode to save the captured image.
         private async void saveBtn_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -65,6 +61,7 @@ namespace CapturePhotoUWP
 
                 FileSavePicker fs = new FileSavePicker();
                 fs.FileTypeChoices.Add("Image", new List<string>() { ".jpeg" });
+               
                 fs.DefaultFileExtension = ".jpeg";
                 fs.SuggestedFileName = "Image" + DateTime.Today.ToString();
                 fs.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
