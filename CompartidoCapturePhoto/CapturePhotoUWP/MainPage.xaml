@@ -8,10 +8,10 @@
     mc:Ignorable="d" >
   
         <Page.BottomAppBar>
-            <CommandBar >
+            <CommandBar IsSticky="True" IsOpen="True">
                 <CommandBar.PrimaryCommands >
-                <AppBarButton x:Name="captureBtn" Label="Capture" Icon="Camera" Click="captureBtn_Click" ></AppBarButton>
-                <AppBarButton x:Name="saveBtn" Label="Save" Icon="Save" Click="saveBtn_Click" ></AppBarButton>
+                <AppBarButton x:Name="captureBtn" Label="Tomar foto del trago" Icon="Camera" Click="captureBtn_Click" ></AppBarButton>
+                <AppBarButton x:Name="saveBtn" Label="Guardar foto" Icon="Save" Click="saveBtn_Click" ></AppBarButton>
             </CommandBar.PrimaryCommands>
            
             </CommandBar>
