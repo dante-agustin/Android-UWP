@@ -6,24 +6,28 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" >
-  
-        <Page.BottomAppBar>
-            <CommandBar IsSticky="True" IsOpen="True">
-                <CommandBar.PrimaryCommands >
+
+    <Page.BottomAppBar >
+        <CommandBar IsSticky="True" IsOpen="True" Visibility="Visible">
+            <CommandBar.PrimaryCommands >
                 <AppBarButton x:Name="captureBtn" Label="Tomar foto del trago" Icon="Camera" Click="captureBtn_Click" ></AppBarButton>
-                <AppBarButton x:Name="saveBtn" Label="Guardar foto" Icon="Save" Click="saveBtn_Click" ></AppBarButton>
+                <AppBarButton x:Name="saveBtn" Label="Guardar" Icon="Save" Click="saveBtn_Click" ></AppBarButton>
+                <AppBarButton x:Name="cancelBtn" Label="Cancelar" Icon="Cancel" Click="cancelBtn_Click" ></AppBarButton>
             </CommandBar.PrimaryCommands>
-           
-            </CommandBar>
-                       
-        </Page.BottomAppBar>
 
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <Image x:Name="captureImage" HorizontalAlignment="Left" Height="503" VerticalAlignment="Top" Width="360"/>
-        </Grid>
+        </CommandBar>
 
-    
-    
+    </Page.BottomAppBar>
 
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Hub x:Name="hubTitle"  Foreground="#FF1A4B07" FontSize="12" FontFamily="Microsoft Himalaya" FontWeight="Bold" Margin="10,10,10,0" />
+
+        <TextBox x:Name="etNombre" PlaceholderText="Ingrese el nombre" HorizontalAlignment="Left" Margin="10,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Text="{Binding nombre}"/>
+        <ComboBox x:Name="comboBoxCategoria" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" Width="340" PlaceholderText="Seleccionar categoría"/>
+        <TextBox x:Name="etIngredientes" PlaceholderText="Ingrese los ingredientes" HorizontalAlignment="Left" Margin="10,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Text="{Binding ingredientes}" Height="101" AcceptsReturn="True"
+            ScrollViewer.VerticalScrollBarVisibility="Visible" />
+        <Image x:Name="drinkImageCapture" HorizontalAlignment="Left" Height="305" VerticalAlignment="Top" Width="340" Margin="10,240,0,0"/>
+        
+    </Grid>
 
 </Page>
